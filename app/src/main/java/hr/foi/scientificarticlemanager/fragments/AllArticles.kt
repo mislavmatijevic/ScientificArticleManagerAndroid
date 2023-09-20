@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import hr.foi.scientificarticlemanager.adapters.ScientificArticleAdapter
 import hr.foi.scientificarticlemanager.databinding.FragmentAllArticlesBinding
 import hr.foi.scientificarticlemanager.viewmodels.AllArticlesViewModel
 
@@ -23,6 +25,17 @@ class AllArticles : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProvider(this)[AllArticlesViewModel::class.java]
+
+        val recyclerView = binding.articleList
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val adapter = ScientificArticleAdapter(emptyList())
+        recyclerView.adapter = adapter
+
+        viewModel.articles.observe(viewLifecycleOwner) { itemViewModels ->
+            adapter.notifyDataSetChanged()
+        }
     }
 }

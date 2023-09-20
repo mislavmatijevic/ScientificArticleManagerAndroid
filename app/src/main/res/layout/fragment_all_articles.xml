@@ -7,8 +7,8 @@
         android:layout_height="match_parent"
         tools:context=".fragments.AllArticles">
 
-        <TextView
-            android:id="@+id/id_test"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/articleList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
