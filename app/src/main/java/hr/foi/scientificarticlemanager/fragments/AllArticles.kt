@@ -1,4 +1,4 @@
-package hr.foi.scientificarticlemanager
+package hr.foi.scientificarticlemanager.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import hr.foi.scientificarticlemanager.R
+import hr.foi.scientificarticlemanager.viewmodels.AllArticlesViewModel
 
 class AllArticles : Fragment() {
 

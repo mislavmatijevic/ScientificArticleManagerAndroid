@@ -1,4 +1,4 @@
-package hr.foi.scientificarticlemanager
+package hr.foi.scientificarticlemanager.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
