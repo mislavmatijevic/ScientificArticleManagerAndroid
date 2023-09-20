@@ -6,22 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import hr.foi.scientificarticlemanager.R
+import hr.foi.scientificarticlemanager.databinding.FragmentAllArticlesBinding
 import hr.foi.scientificarticlemanager.viewmodels.AllArticlesViewModel
 
 class AllArticles : Fragment() {
-
-    companion object {
-        fun newInstance() = AllArticles()
-    }
-
     private lateinit var viewModel: AllArticlesViewModel
+    private lateinit var binding: FragmentAllArticlesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_all_articles, container, false)
+    ): View {
+        binding = FragmentAllArticlesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
